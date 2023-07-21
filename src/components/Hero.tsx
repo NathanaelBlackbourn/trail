@@ -1,13 +1,11 @@
 import styles from "@/styles/Hero.module.scss";
 import Gallery from "./Gallery";
+import Header from "./Header";
 
 export default function Hero() {
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
-        <h1 className={styles.title}>TRAIL</h1>
-        <div />
-      </div>
+      <Header />
       <div className={styles.left}></div>
       <div className={styles.right}>
         <Gallery />
