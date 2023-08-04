@@ -10,7 +10,7 @@
   left: 0;
   display: flex;
   justify-content: space-between;
-  width: calc(100% - 2 * $padding);
+  min-width: calc(100% - 2 * $padding);
   height: $height;
   padding: $padding;
 
@@ -26,10 +26,6 @@
 
     transition-property: font-variation-settings;
     transition-timing-function: ease;
-
-    // @supports (font-variation-settings: normal) {
-    //   font-variation-settings: "Stretch" 500;
-    // }
   }
 
   div {

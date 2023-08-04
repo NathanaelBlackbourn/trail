@@ -7,29 +7,37 @@ export default function Header() {
 
   const [stretch, setStretch] = useState(0);
 
-  useEffect(() => {
-    stretchTitle();
+  let debounceTimer: NodeJS.Timeout;
 
-    window.addEventListener("resize", stretchTitle);
-
-    return () => {
-      window.removeEventListener("resize", stretchTitle);
-    };
-  }, [stretch]);
+  const debounceStretch = () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      stretchTitle();
+    }, 500);
+  };
 
   const stretchTitle = () => {
     if (!titleRef.current || !iconRef.current) return;
     const titleRect = titleRef.current.getBoundingClientRect();
     const iconRect = iconRef.current.getBoundingClientRect();
-
     const distance = iconRect.left - titleRect.right;
 
     distance >= 25 && stretch < 1000
-      ? setStretch((current) => current + 1)
+      ? (setStretch((current) => current + 1), setTimeout(stretchTitle, 100))
+      : distance <= 20
+      ? (setStretch((current) => current - 1), setTimeout(stretchTitle, 100))
       : null;
-
-    distance <= 20 ? setStretch((current) => current - 1) : null;
   };
+
+  useEffect(() => {
+    stretchTitle();
+
+    window.addEventListener("resize", debounceStretch);
+
+    return () => {
+      window.removeEventListener("resize", debounceStretch);
+    };
+  });
 
   return (
     <div className={styles.header}>
