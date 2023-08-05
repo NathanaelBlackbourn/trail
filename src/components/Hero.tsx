@@ -6,9 +6,13 @@ export default function Hero() {
   return (
     <div className={styles.container}>
       <Header />
-      <div className={styles.left}></div>
-      <div className={styles.right}>
-        <Gallery />
+      <Gallery />
+      <div className={styles.left}>
+        <h2>FOOTWEAR</h2>
+        <h2>FOR</h2>
+        <h2>DISTANCE</h2>
+        <h2>AND</h2>
+        <h2>PERSISTANCE</h2>
       </div>
     </div>
   );

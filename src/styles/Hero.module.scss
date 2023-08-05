@@ -1,0 +1,21 @@
+@import "variables";
+
+.container {
+  position: relative;
+
+  height: 100vh;
+  padding-top: 5rem;
+
+  @media (min-width: $breakpoint) {
+    padding-top: 7rem;
+  }
+}
+
+.left {
+  padding-left: 0.4rem;
+  h2 {
+    font-family: "Trail", sans-serif;
+    font-size: 3rem;
+    word-wrap: break-word;
+  }
+}

@@ -1,3 +1,5 @@
+@import "variables";
+
 @font-face {
   font-family: "Trail";
   src: url("/fonts/TrailType-VF.ttf") format("truetype");
@@ -5,4 +7,19 @@
 
 * {
   margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $grey;
+}
+
+h1 {
+  color: $text-col;
+}
+
+h2 {
+  font-weight: 400;
+  color: $header-grey-col;
+  mix-blend-mode: difference;
 }
