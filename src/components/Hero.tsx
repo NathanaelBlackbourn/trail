@@ -6,8 +6,14 @@ export default function Hero() {
   return (
     <div className={styles.container}>
       <Header />
-      <Gallery />
-      <div className={styles.left}>
+      <div className={`${styles.right} row`}>
+        <Gallery />
+        <div>
+          <h3>SS23 collections now in stock</h3>
+          <h3>Browse our collection</h3>
+        </div>
+      </div>
+      <div className={`${styles.left} row`}>
         <h2>FOOTWEAR</h2>
         <h2>FOR</h2>
         <h2>DISTANCE</h2>

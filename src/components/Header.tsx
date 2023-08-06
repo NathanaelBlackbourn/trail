@@ -40,7 +40,7 @@ export default function Header() {
   });
 
   return (
-    <div className={styles.header}>
+    <div className={`${styles.header} row`}>
       <h1 ref={titleRef} style={{ fontVariationSettings: '"ZZZZ" ' + stretch }}>
         TRAIL
       </h1>
