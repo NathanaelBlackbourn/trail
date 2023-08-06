@@ -1,9 +1,14 @@
-import styles from "@/styles/Category.module.scss";
+import { inventory } from "@/data/inventory";
+import { useState } from "react";
 
 export default function Category() {
+  const [cat] = useState(inventory[0]);
+
   return (
-    <div>
-      <h1 className={styles.header}>Category styles test</h1>
+    <div className={"row"}>
+      {/* {cat.products.map((product) => (
+        <Product key={product.id} product={product} />
+      ))} */}
     </div>
   );
 }
