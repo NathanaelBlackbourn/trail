@@ -9,8 +9,8 @@ export default function Hero() {
       <div className={`${styles.right} row`}>
         <Gallery />
         <div>
-          <h3>SS23 collections now in stock</h3>
-          <h3>Browse our collection</h3>
+          <h4>SS23 collections now in stock</h4>
+          <h4>Browse our collection</h4>
         </div>
       </div>
       <div className={`${styles.left} row`}>
