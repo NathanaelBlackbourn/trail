@@ -1,4 +1,5 @@
-import styles from "@/styles/Interlude.module.scss";
+import Arrow from "../Arrow/Arrow";
+import styles from "./Interlude.module.scss";
 
 export default function Interlude() {
   return (
@@ -8,8 +9,8 @@ export default function Interlude() {
       </div>
       <div className={`column ${styles.right}`}>
         <h4>Read more about our environmental goals</h4>
-        <div className={styles.arrow}>
-          <svg></svg>
+        <div className={styles.arrowContainer}>
+          <Arrow />
         </div>
       </div>
     </div>

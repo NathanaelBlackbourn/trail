@@ -1,4 +1,4 @@
-import styles from "@/styles/Product.module.scss";
+import styles from "./Product.module.scss";
 
 interface Props {
   product: Inventory.Product;

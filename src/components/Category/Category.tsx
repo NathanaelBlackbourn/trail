@@ -1,5 +1,5 @@
-import styles from "@/styles/Category.module.scss";
-import Product from "./Product";
+import Product from "../Product/Product";
+import styles from "./Category.module.scss";
 interface Props {
   category: Inventory.Category;
 }

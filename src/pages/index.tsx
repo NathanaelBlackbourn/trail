@@ -1,10 +1,10 @@
-import Category from "@/components/Category";
-import Footer from "@/components/Footer";
-import Interlude from "@/components/Interlude";
+import Category from "@/components/Category/Category";
+import Footer from "@/components/Footer/Footer";
+import Interlude from "@/components/Interlude/Interlude";
 import { inventory } from "@/data/inventory";
 import { Inter } from "next/font/google";
 import Head from "next/head";
-import Hero from "../components/Hero";
+import Hero from "../components/Hero/Hero";
 
 const inter = Inter({ subsets: ["latin"] });
 

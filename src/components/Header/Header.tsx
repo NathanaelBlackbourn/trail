@@ -1,5 +1,5 @@
-import styles from "@/styles/Header.module.scss";
 import { useEffect, useRef, useState } from "react";
+import styles from "./Header.module.scss";
 
 export default function Header() {
   const titleRef = useRef<HTMLHeadingElement>(null);
