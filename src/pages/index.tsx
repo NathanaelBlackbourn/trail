@@ -1,6 +1,7 @@
 import Category from "@/components/Category/Category";
 import Footer from "@/components/Footer/Footer";
 import Interlude from "@/components/Interlude/Interlude";
+import Menu from "@/components/Menu/Menu";
 import { inventory } from "@/data/inventory";
 import { Inter } from "next/font/google";
 import Head from "next/head";
@@ -17,6 +18,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Menu />
       <main>
         <Hero />
         <Category category={inventory[0]} />
