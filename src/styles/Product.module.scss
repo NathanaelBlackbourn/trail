@@ -1,0 +1,13 @@
+@import "variables";
+
+.container {
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+
+  @media (min-width: $breakpoint) {
+    width: calc(100% / 3);
+  }
+}
