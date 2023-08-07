@@ -1,8 +1,9 @@
 @import "../../styles/variables";
 
+$padding: 0.2rem;
+$height: 4rem;
+
 .header {
-  $padding: 0.2rem;
-  $height: 4rem;
   font-size: $height;
 
   position: absolute;
@@ -10,6 +11,7 @@
   left: 0;
   display: flex;
   justify-content: space-between;
+  align-items: safe center;
   flex-shrink: 0;
   min-width: 100%;
   height: $height;
@@ -20,35 +22,41 @@
     height: 6rem;
     font-size: 6rem;
   }
+}
 
-  h1 {
-    padding: $padding;
+.trail {
+  padding: $padding;
 
-    font-family: "Trail", sans-serif;
-    font-size: 1em;
-    font-weight: 400;
+  font-family: "Trail", sans-serif;
+  font-size: 1em;
+  font-weight: 400;
 
-    // transition-property: font-variation-settings;
-    // transition-timing-function: ease;
+  // transition-property: font-variation-settings;
+  // transition-timing-function: ease;
 
-    flex-shrink: 0;
-  }
+  flex-shrink: 0;
+}
 
-  div {
-    padding: $padding;
+.iconContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-    height: calc(100% - 2 * $padding);
-    background-color: black;
+  height: 0.65em;
+  width: 1em;
 
-    @supports (aspect-ratio: 1) {
-      aspect-ratio: 1;
+  // Maintain aspect ratio using padding, set by height.
+  // @supports not (aspect-ratio: 1) {
+  //   padding-left: $icon-size;
+  // }
+
+  flex-shrink: 0;
+
+  hr {
+    border: 2px solid $text-col;
+
+    @media (min-width: $breakpoint) {
+      border-width: 3px;
     }
-
-    // Maintain aspect ratio using padding, set by height.
-    // @supports not (aspect-ratio: 1) {
-    //   padding-left: $icon-size;
-    // }
-
-    flex-shrink: 0;
   }
 }

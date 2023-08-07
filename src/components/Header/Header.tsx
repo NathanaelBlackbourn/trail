@@ -41,10 +41,18 @@ export default function Header() {
 
   return (
     <div className={`${styles.header} row`}>
-      <h1 ref={titleRef} style={{ fontVariationSettings: '"ZZZZ" ' + stretch }}>
+      <h1
+        className={styles.trail}
+        ref={titleRef}
+        style={{ fontVariationSettings: '"ZZZZ" ' + stretch }}
+      >
         TRAIL
       </h1>
-      <div ref={iconRef} />
+      <div className={styles.iconContainer} ref={iconRef}>
+        <hr />
+        <hr />
+        <hr />
+      </div>
     </div>
   );
 }
