@@ -23,10 +23,14 @@ h1 {
 
 h2 {
   font-family: "Trail", sans-serif;
-  font-size: 4rem;
+  font-size: 2rem;
   font-weight: 400;
   color: $header-grey-col;
   mix-blend-mode: difference;
+
+  @media (min-width: $breakpoint) {
+    font-size: 4rem;
+  }
 }
 
 h3 {
@@ -56,8 +60,8 @@ p {
 }
 
 .row {
+  width: 100%;
   padding: 0 0.5rem;
-  margin-bottom: 5rem;
 }
 
 .column {
