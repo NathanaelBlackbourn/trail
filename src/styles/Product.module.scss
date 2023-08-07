@@ -3,20 +3,47 @@
 .container {
   width: 100%;
 
-  div {
-    position: relative;
-    padding-top: 127.8%;
-
-    background: $light-grey;
-
-    img {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-    }
-  }
-
   @media (min-width: $breakpoint) {
     width: calc(100% / 3);
   }
+}
+
+.brand {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+}
+
+.sizeWrapper {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+
+  padding: 0 0.6rem;
+
+  background: $light-grey;
+
+  border: 1.7px solid $text-col;
+  border-radius: 999999px;
+
+  cursor: pointer;
+
+  p {
+    font-size: 1.3rem;
+    font-weight: 200;
+  }
+}
+
+.imgContainer {
+  position: relative;
+  padding-top: 127.8%;
+  margin-bottom: 0.5rem;
+
+  background: $light-grey;
+}
+
+.image {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
