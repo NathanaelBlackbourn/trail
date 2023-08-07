@@ -2,9 +2,10 @@
 
 .container {
   width: 100%;
+  margin-bottom: 2rem;
 
   @media (min-width: $breakpoint) {
-    width: calc(100% / 3);
+    width: calc((100% - 3rem) / 3);
   }
 }
 
