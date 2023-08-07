@@ -3,8 +3,17 @@
 .container {
   width: 100%;
 
-  img {
-    width: 100%;
+  div {
+    position: relative;
+    padding-top: 127.8%;
+
+    background: $light-grey;
+
+    img {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
   }
 
   @media (min-width: $breakpoint) {

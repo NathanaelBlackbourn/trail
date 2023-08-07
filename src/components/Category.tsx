@@ -7,7 +7,7 @@ interface Props {
 export default function Category({ category }: Props) {
   return (
     <div className={"row"}>
-      <h3>{category.categoryName}</h3>
+      <h3 className={"column"}>{category.categoryName}</h3>
       <div className={styles.productContainer}>
         {category.products.map((product) => (
           <Product key={product.id} product={product} />
