@@ -7,7 +7,7 @@ import styles from "./Hero.module.scss";
 export default function Hero() {
   return (
     <div className={styles.container}>
-      <Header />
+      <Header variant="hero" />
       <div className={`${styles.right} row`}>
         <Gallery />
         <LinkWrapper onClick={() => console.log("Scrolling down")}>

@@ -2,7 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import LinkWrapper from "../LinkWrapper/LinkWrapper";
 import styles from "./Header.module.scss";
 
-export default function Header() {
+interface Props {
+  variant: "hero" | "menu";
+}
+
+export default function Header({ variant }: Props) {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const iconRef = useRef<HTMLDivElement>(null);
 
@@ -41,7 +45,14 @@ export default function Header() {
   });
 
   return (
-    <div className={`${styles.header} row`}>
+    <div
+      className={`${styles.header} row`}
+      style={
+        variant === "hero"
+          ? { position: "absolute", top: 0, left: 0 }
+          : { position: "relative" }
+      }
+    >
       <h1
         className={styles.trail}
         ref={titleRef}
