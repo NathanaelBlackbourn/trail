@@ -15,9 +15,6 @@
 }
 
 .right {
-  display: flex;
-  justify-content: space-between;
-
   position: absolute;
   right: 0;
   bottom: 0;
@@ -26,6 +23,11 @@
   @media (min-width: $breakpoint) {
     width: calc(100% / 3);
   }
+}
+
+.messageContainer {
+  display: flex;
+  justify-content: space-between;
 
   h4 {
     display: inline-block;

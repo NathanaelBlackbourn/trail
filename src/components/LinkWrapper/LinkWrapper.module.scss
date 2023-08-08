@@ -1,0 +1,31 @@
+@import "../../styles/variables.scss";
+
+.container {
+  position: relative;
+  cursor: pointer;
+
+  > :first-child::before {
+    position: absolute;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    top: -3px;
+    background: $orange;
+    transform: scaleY(0);
+    transform-origin: bottom;
+
+    content: "";
+
+    z-index: -1;
+
+    transition-property: transform;
+    transition-duration: 0.075s;
+    transition-timing-function: linear;
+  }
+
+  &:hover {
+    > :first-child::before {
+      transform: scaleY(1);
+    }
+  }
+}

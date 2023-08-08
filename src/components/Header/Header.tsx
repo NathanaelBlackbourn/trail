@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import LinkWrapper from "../LinkWrapper/LinkWrapper";
 import styles from "./Header.module.scss";
 
 export default function Header() {
@@ -48,11 +49,17 @@ export default function Header() {
       >
         TRAIL
       </h1>
-      <div className={styles.iconContainer} ref={iconRef}>
-        <hr />
-        <hr />
-        <hr />
-      </div>
+      <LinkWrapper
+        onClick={() => {
+          console.log("Opening menu");
+        }}
+      >
+        <div className={styles.iconContainer} ref={iconRef}>
+          <hr />
+          <hr />
+          <hr />
+        </div>
+      </LinkWrapper>
     </div>
   );
 }
