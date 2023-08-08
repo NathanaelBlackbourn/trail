@@ -34,25 +34,55 @@ $height: 4rem;
 }
 
 .iconContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
   height: 0.65em;
   width: 1em;
 
-  // Maintain aspect ratio using padding, set by height.
-  // @supports not (aspect-ratio: 1) {
-  //   padding-left: $icon-size;
-  // }
+  overflow: hidden;
 
   flex-shrink: 0;
 
   hr {
+    position: absolute;
+    left: 0;
+    right: 0;
     border: 2px solid $text-col;
+
+    transition: all 0.2s ease-in-out;
+    transform-origin: center;
 
     @media (min-width: $breakpoint) {
       border-width: 3px;
     }
+  }
+
+  :nth-child(1) {
+    top: 0;
+    rotate: 0;
+    transform: translateY(0);
+  }
+
+  :nth-child(2) {
+    top: 50%;
+    rotate: 0;
+    transform: translateY(-50%);
+  }
+
+  :nth-child(3) {
+    bottom: 0;
+  }
+}
+.open {
+  :nth-child(1) {
+    top: 50%;
+    rotate: 45deg;
+    transform: translateY(-50%);
+  }
+
+  :nth-child(2) {
+    rotate: -45deg;
+  }
+
+  :nth-child(3) {
+    bottom: -50px;
   }
 }

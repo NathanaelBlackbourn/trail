@@ -1,3 +1,4 @@
+import { useMenuContext } from "@/contexts/MenuContext";
 import { useEffect, useRef, useState } from "react";
 import LinkWrapper from "../LinkWrapper/LinkWrapper";
 import styles from "./Header.module.scss";
@@ -11,6 +12,8 @@ export default function Header({ variant }: Props) {
   const iconRef = useRef<HTMLDivElement>(null);
 
   const [stretch, setStretch] = useState(0);
+
+  const { menuOpen, setMenuOpen } = useMenuContext();
 
   let debounceTimer: NodeJS.Timeout;
 
@@ -62,10 +65,14 @@ export default function Header({ variant }: Props) {
       </h1>
       <LinkWrapper
         onClick={() => {
-          console.log("Opening menu");
+          setMenuOpen(!menuOpen);
+          console.log(menuOpen);
         }}
       >
-        <div className={styles.iconContainer} ref={iconRef}>
+        <div
+          className={`${menuOpen && styles.open} ${styles.iconContainer}`}
+          ref={iconRef}
+        >
           <hr />
           <hr />
           <hr />
