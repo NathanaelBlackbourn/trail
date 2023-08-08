@@ -1,0 +1,29 @@
+@import "../../styles/variables.scss";
+
+.container {
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transform: translateY(-100%);
+  transition-property: transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+
+  background: $orange;
+}
+
+.open {
+  transform: translateY(0);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}

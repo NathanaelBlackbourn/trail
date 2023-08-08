@@ -37,8 +37,4 @@
   display: flex;
   justify-content: space-between;
   align-items: last baseline;
-
-  @media (min-width: $breakpoint) {
-    max-width: calc(100% / 3);
-  }
 }
