@@ -1,9 +1,12 @@
+import { useMenuContext } from "@/contexts/MenuContext";
 import Header from "../Header/Header";
 import styles from "./Menu.module.scss";
 
 export default function Menu() {
+  const { menuOpen } = useMenuContext();
+
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${menuOpen && styles.open}`}>
       <div className={`row ${styles.top}`}>
         <div className={`column ${styles.menuColumn}`}>
           <h3>HIKE</h3>

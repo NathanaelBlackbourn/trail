@@ -27,7 +27,7 @@ $height: 4rem;
   font-size: 1em;
   font-weight: 400;
 
-  transition: font-variation-settings 28ms ease;
+  transition: font-variation-settings 1000 / 60 ease;
 
   flex-shrink: 0;
 }

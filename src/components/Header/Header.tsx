@@ -40,9 +40,9 @@ export default function Header({ variant }: Props) {
 
       const adjustStretch = (diff: number) => {
         diff <= 20 && stretch > 500
-          ? (setStretch((prev) => prev - 5), nextFrame(true))
-          : diff >= 50 && stretch < 1000
-          ? (setStretch((prev) => prev + 5), nextFrame(true))
+          ? (setStretch((prev) => prev - 10), nextFrame(true))
+          : diff >= 30 && stretch < 1000
+          ? (setStretch((prev) => prev + 10), nextFrame(true))
           : null;
       };
 
