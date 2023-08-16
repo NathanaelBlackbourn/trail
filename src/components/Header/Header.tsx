@@ -10,6 +10,7 @@ interface Props {
 export default function Header({ variant }: Props) {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const iconRef = useRef<HTMLDivElement>(null);
+  const requestRef = useRef<number>();
   const deltaTimeTracker = useRef(performance.now());
   const stretchTracker = useRef(500);
   const [stretch, setStretch] = useState<number>(stretchTracker.current);
@@ -29,28 +30,29 @@ export default function Header({ variant }: Props) {
     const space = window.innerWidth - iconWidth;
     return space - titleWidth;
   }, []);
+
   const stretchTitle = useCallback(
     (timeStamp: DOMHighResTimeStamp) => {
-      requestAnimationFrame(stretchTitle);
+      const nextFrame = (resetTimer: boolean) => {
+        if (resetTimer) deltaTimeTracker.current = timeStamp;
+        requestRef.current = requestAnimationFrame(stretchTitle);
+      };
 
-      // regulateStretch();
+      const adjustStretch = (diff: number) => {
+        diff <= 20 && stretch > 500
+          ? (setStretch((prev) => prev - 5), nextFrame(true))
+          : diff >= 50 && stretch < 1000
+          ? (setStretch((prev) => prev + 5), nextFrame(true))
+          : null;
+      };
+
+      regulateStretch();
 
       const diff = getDiff();
       if (!diff) return;
 
-      const adjustStretch = (diff: number) => {
-        console.log(diff);
-        diff <= 20 && stretch > 500
-          ? setStretch((prev) => prev - 5)
-          : diff >= 50 && stretch < 1000
-          ? setStretch((prev) => prev + 5)
-          : null;
-        console.log(stretch);
-      };
-
       const elapsed = timeStamp - deltaTimeTracker.current;
-      elapsed > 1000 / 60 &&
-        (adjustStretch(diff), (deltaTimeTracker.current = timeStamp));
+      elapsed > 1000 / 60 ? adjustStretch(diff) : nextFrame(false);
     },
     [stretch, regulateStretch, getDiff]
   );
@@ -68,6 +70,7 @@ export default function Header({ variant }: Props) {
 
     return () => {
       window.removeEventListener("resize", debounceStretch);
+      cancelAnimationFrame(requestRef.current!);
     };
   }, [stretchTitle, debounceStretch]);
 
