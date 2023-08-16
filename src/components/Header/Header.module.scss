@@ -27,8 +27,7 @@ $height: 4rem;
   font-size: 1em;
   font-weight: 400;
 
-  // transition-property: font-variation-settings;
-  // transition-timing-function: ease;
+  transition: font-variation-settings 28ms ease;
 
   flex-shrink: 0;
 }
@@ -71,7 +70,7 @@ $height: 4rem;
     bottom: 0;
   }
 }
-.open {
+s .open {
   :nth-child(1) {
     top: 50%;
     rotate: 45deg;
