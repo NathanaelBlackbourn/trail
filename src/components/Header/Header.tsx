@@ -1,6 +1,5 @@
-import { useMenuContext } from "@/contexts/MenuContext";
 import { useCallback, useEffect, useRef, useState } from "react";
-import LinkWrapper from "../LinkWrapper/LinkWrapper";
+import MenuIcon from "../MenuIcon/MenuIcon";
 import styles from "./Header.module.scss";
 
 interface Props {
@@ -15,7 +14,6 @@ export default function Header({ variant }: Props) {
   const stretchTracker = useRef(500);
   const [stretch, setStretch] = useState<number>(stretchTracker.current);
 
-  const { menuOpen, setMenuOpen } = useMenuContext();
   const debounceTimer = useRef<NodeJS.Timeout>();
 
   const regulateStretch = useCallback(() => {
@@ -90,21 +88,7 @@ export default function Header({ variant }: Props) {
       >
         TRAIL
       </h1>
-      <LinkWrapper
-        onClick={() => {
-          setMenuOpen(!menuOpen);
-          console.log(menuOpen);
-        }}
-      >
-        <div
-          className={`${menuOpen && styles.open} ${styles.iconContainer}`}
-          ref={iconRef}
-        >
-          <hr />
-          <hr />
-          <hr />
-        </div>
-      </LinkWrapper>
+      <MenuIcon iconRef={iconRef} />
     </div>
   );
 }
