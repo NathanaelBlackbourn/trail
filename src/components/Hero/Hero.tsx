@@ -1,3 +1,4 @@
+import useScrollStretch from "../../hooks/useScrollStretch";
 import Arrow from "../Arrow/Arrow";
 import Gallery from "../Gallery/Gallery";
 import Header from "../Header/Header";
@@ -5,8 +6,10 @@ import LinkWrapper from "../LinkWrapper/LinkWrapper";
 import styles from "./Hero.module.scss";
 
 export default function Hero() {
+  const { stretch, containerRef } = useScrollStretch();
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={containerRef}>
       <Header variant="hero" />
       <div className={`${styles.right} row`}>
         <Gallery />
@@ -23,11 +26,13 @@ export default function Hero() {
         </LinkWrapper>
       </div>
       <div className={`${styles.left} row`}>
-        <h2>FOOTWEAR</h2>
-        <h2>FOR</h2>
-        <h2>DISTANCE</h2>
-        <h2>AND</h2>
-        <h2>PERSISTANCE</h2>
+        <h2 style={{ fontVariationSettings: `"ZZZZ" ${stretch}` }}>FOOTWEAR</h2>
+        <h2 style={{ fontVariationSettings: `"ZZZZ" ${stretch}` }}>FOR</h2>
+        <h2 style={{ fontVariationSettings: `"ZZZZ" ${stretch}` }}>DISTANCE</h2>
+        <h2 style={{ fontVariationSettings: `"ZZZZ" ${stretch}` }}>AND</h2>
+        <h2 style={{ fontVariationSettings: `"ZZZZ" ${stretch}` }}>
+          PERSISTANCE
+        </h2>
       </div>
     </div>
   );
