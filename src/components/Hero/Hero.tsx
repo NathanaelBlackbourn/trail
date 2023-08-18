@@ -31,7 +31,7 @@ export default function Hero() {
         <h2 style={{ fontVariationSettings: `"ZZZZ" ${stretch}` }}>DISTANCE</h2>
         <h2 style={{ fontVariationSettings: `"ZZZZ" ${stretch}` }}>AND</h2>
         <h2 style={{ fontVariationSettings: `"ZZZZ" ${stretch}` }}>
-          PERSISTANCE
+          PERSISTENCE
         </h2>
       </div>
     </div>
